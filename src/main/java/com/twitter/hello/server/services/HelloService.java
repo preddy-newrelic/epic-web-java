@@ -21,7 +21,7 @@ public class HelloService {
 	 * returns a String
 	 */
 	public Response hi(Request request) {
-		List<Integer> primes = PrimeCalc.sieveOfEratosthenes(59900000);
+		List<Integer> primes = PrimeCalc.sieveOfEratosthenes(599000);
 		return response.ok("Hello " + request.getParam("name"));
 	}
 
@@ -29,7 +29,7 @@ public class HelloService {
 	 * returns a GoodbyeResponse
 	 */
 	public GoodbyeResponse goodbye(Request request) {
-		List<Integer> primes = PrimeCalc.sieveOfEratosthenes(49900000);
+		List<Integer> primes = PrimeCalc.sieveOfEratosthenes(499000);
 		return new GoodbyeResponse("guest", "cya", 123);
 	}
 
@@ -37,7 +37,7 @@ public class HelloService {
 	 * returns an http Response
 	 */
 	public Response echo(Request request) {
-		List<Integer> primes = PrimeCalc.sieveOfEratosthenes(39900000);
+		List<Integer> primes = PrimeCalc.sieveOfEratosthenes(399000);
 		return response.ok(request.getParam("q"));
 	}
 
@@ -45,7 +45,7 @@ public class HelloService {
 	 * put, trace, & head should not return response bodies
 	 */
 	public Response handleAnyMethod(Request request) {
-		List<Integer> primes = PrimeCalc.sieveOfEratosthenes(99900000);
+		List<Integer> primes = PrimeCalc.sieveOfEratosthenes(999000);
 		if (request.method().equals(Method.Get()) || request.method().equals(Method.Post())
 				|| request.method().equals(Method.Patch()) || request.method().equals(Method.Delete())
 				|| request.method().equals(Method.Connect()) || request.method().equals(Method.Options())) {
