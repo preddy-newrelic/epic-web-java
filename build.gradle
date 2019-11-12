@@ -50,7 +50,7 @@ dependencies {
 application {
     // Define the main class for the application
     mainClassName = 'com.twitter.hello.server.HelloWorldServerMain'
-    applicationDefaultJvmArgs = ['-javaagent:/home/ubuntu/newrelic/newrelic.jar', '-Xms2560', '-Xmx2560']
+    applicationDefaultJvmArgs = ['-javaagent:/home/ubuntu/newrelic/newrelic.jar', '-Xms2560M', '-Xmx2560M']
 }
 
 
