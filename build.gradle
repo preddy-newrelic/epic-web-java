@@ -54,7 +54,13 @@ dependencies {
 application {
     // Define the main class for the application
     mainClassName = 'com.twitter.hello.server.HelloWorldServerMain'
-    applicationDefaultJvmArgs = ['-javaagent:/home/ubuntu/newrelic/newrelic.jar', '-Xms2560M', '-Xmx2560M']
+    applicationDefaultJvmArgs = ['-javaagent:/home/ubuntu/newrelic/newrelic.jar', '-XX:+UseG1GC', '-XX:MaxGCPauseMillis=500', 
+    			'-XX:ParallelGCThreads=23', '-XX:ConcGCThreads=6', '-XX:G1HeapRegionSize=16m', '-XX:MaxTenuringThreshold=7', '-XX:+UseStringDeduplication',
+				'-XX:NumberOfGCLogFiles=30', '-XX:+PrintGCDetails', '-XX:+PrintGCDateStamps', '-XX:+UseGCLogFileRotation', '-XX:NumberOfGCLogFiles=5', '-XX:GCLogFileSize=1024K',
+				'-Xloggc:/tmp/java_gc.log', '-Djava.net.preferIPv4Stack=true', '-Dsun.net.inetaddr.ttl=0', '-Dsun.net.inetaddr.negative.ttl=0', '-XX:+PrintCommandLineFlags', 
+				'-XX:+UseBiasedLocking', '-XX:MaxJavaStackTraceDepth=100', '-Xms16G', '-Xmx16G', '-XX:MaxMetaspaceSize=256m', '-XX:ErrorFile=/tmp/java_error.log', '-XX:OnError=kill -9 %p',
+				'-XX:+HeapDumpOnOutOfMemoryError', '-XX:HeapDumpPath=/tmp/java_heap.hprof','-XX:OnOutOfMemoryError=kill -9 %p', '-Dfile.encoding=UTF-8', '-Dsun.jnu.encoding=UTF-8',
+				'-XX:+PreserveFramePointer']
 }
 
 
